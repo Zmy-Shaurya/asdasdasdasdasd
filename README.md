@@ -226,3 +226,86 @@ public class RollerSkates {
 
 **Correct Answer:** **A. The code does not compile.**
 **Reason:** The `main` method is `static` and cannot directly access the non-static instance variable `tracks` (and other variables/objects that are either undeclared or incorrectly accessed). The compiler will flag this as an error.
+
+
+-----
+-----
+
+Here are all the questions and their correct answers from the images you provided, formatted for easy saving:
+
+-----
+
+## 1\. Exception Handling Question
+
+**Source Image:** `488166b0-6926-4df0-b772-faaf8c70265c`
+
+**Question:** Which of the following types are not recommended to catch in your application? (Choose two)
+
+  * A. Exception
+  * B. CheckedException
+  * C. Throwable
+  * D. RuntimeException
+  * E. Error
+
+**Correct Answers:**
+
+  * **A. Exception** (Catching the generic `Exception` is often bad practice as it can hide specific, recoverable errors.)
+  * **E. Error** (Errors represent serious, unrecoverable JVM problems, and applications should generally not try to catch them.)
+
+-----
+
+## 2\. Static Variable/Constructor Question
+
+**Source Image:** `30de4dbe-80e0-423c-80f1-21be78605de7`
+
+**Question:** What will be the output of the following code?
+
+```java
+class Counter {
+    static int count = 0;
+
+    Counter() {
+        count++;
+        System.out.println(count);
+    }
+
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+        Counter c3 = new Counter();
+    }
+}
+```
+
+**Correct Answer (Output):**
+
+```
+1
+2
+3
+```
+
+**Explanation:** The `count` variable is **static**, meaning it's shared by all objects. Each time a new `Counter` object is created, the constructor is called, the shared `count` is incremented, and the new value is printed.
+
+-----
+
+## 3\. Compilation Error Question
+
+**Source Image:** `57e78c20-970b-432d-a4fe-8622ac160ac8`
+
+**Question:** What is the result of compiling and executing the following class?
+
+```java
+1: public class ParkRanger {
+2: int birds = 10;
+3: public static void main(String[] data) {4. int trees = 5;
+5: System.out.print(trees + birds);
+6: }
+7: }
+```
+
+**Correct Answer:**
+
+  * **A. It does not compile.**
+
+**Explanation:** The code has a syntax error. The variable declaration `int trees = 5;` is incorrectly placed in the `main` method signature instead of within the method body. The line should read: `public static void main(String[] data) {` on line 3, and then `int trees = 5;` on line 4.
